@@ -28,6 +28,12 @@ import org.apache.rocketmq.store.config.MessageStoreConfig;
 import org.apache.rocketmq.store.util.LibC;
 import sun.nio.ch.DirectBuffer;
 
+/**
+ * mlock(), mlock2(), and mlockall() lock part or all of the calling process's virtual address space into RAM，
+ * preventing that memory from being paged to the swap area. All pages that contain a part of the specified 
+ * address range are guaranteed to be resident in RAM when the call returns successfully; the pages are guaranteed
+ * to stay in RAM until later unlocked.
+ */
 public class TransientStorePool {
     private static final InternalLogger log = InternalLoggerFactory.getLogger(LoggerName.STORE_LOGGER_NAME);
 
